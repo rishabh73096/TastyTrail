@@ -1,7 +1,7 @@
 const Sucess=()=> {
     return (
       <>
-        
+        <h1> sucess</h1>
      
         
       </>
