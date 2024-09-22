@@ -2,19 +2,16 @@ const NavBar = () => {
   return (
     <>
       <div
-        className="flex justify-between
-      m-2"
-      >
+        className="flex lg:justify-between m-4 ms-7 ">
         <div>
-          <p1> {new Date().toString().slice(0, 16)}</p1>
-          <p> Tastytails Foods </p>
+          <p className="text-[21px] text-gray-600 font-semibold"> {new Date().toString().slice(0, 16)}</p>
+          <p className="text-[23px] font-bold"> Tastytails Foods </p>
         </div>
         <div>
-        
           <input
-            type="Search"
+            type="search"
             placeholder="Search here"
-            className=" border-zinc-300"
+            className="w-full lg:w-[25vw] p-3 outline-none border border-gray-300 rounded-lg shadow-sm bg-gray-50 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 "
           />
         </div>
       </div>
