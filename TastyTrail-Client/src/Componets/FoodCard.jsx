@@ -1,8 +1,11 @@
 import { FaStar } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/slices/CartSlice.jsx"
+import { addToCart } from "../redux/slices/CartSlice.jsx";
 
-const FoodCard = ({ img, desc, name, rating, id, price }) => {
+const FoodCard = ({ img, desc, name, rating, id, price ,handletost
+   
+
+}) => {
   const dispatch = useDispatch();
   return (
     <div className="w-full sm:w-[60vw] lg:w-[20vw] bg-white shadow-lg rounded-lg overflow-hidden m-4 ms-7">
@@ -15,19 +18,27 @@ const FoodCard = ({ img, desc, name, rating, id, price }) => {
         <div className="flex justify-between items-center mb-2">
           <h3 className="text-lg font-bold">{name}</h3>
           <p className="text-lg font-semibold text-orange-500">
-            <span>&#8377;</span>{price}
+            <span>&#8377;</span>
+            {price}
           </p>
         </div>
-        <p className="text-gray-500 mb-4">
-          {desc}
-        </p>
+        <p className="text-gray-500 mb-4">{desc}</p>
         {/* <p>{id}</p> */}
         <div className="flex justify-between items-center">
           <div className="flex items-center text-yellow-500">
             <FaStar className="mr-1" />
             <span className="font-bold">{rating}</span>
           </div>
-          <button className="bg-orange-500 font-semibold text-white px-2 py-1 rounded-md shadow-md hover:bg-orange-600 transition duration-300" onClick={()=> dispatch(addToCart({id,img,price,qty:1,name,rating}))}>
+       
+          <button
+            className="bg-orange-500 font-semibold text-white px-2 py-1 rounded-md shadow-md hover:bg-orange-600 transition duration-300"
+            
+            onClick={() => {
+              dispatch(addToCart({ id, img, price, qty: 1, name, rating }));
+              handletost(name);
+            }}
+            
+          >
             Add to Cart
           </button>
         </div>
