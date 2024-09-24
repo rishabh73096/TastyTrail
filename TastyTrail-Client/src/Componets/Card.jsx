@@ -52,7 +52,7 @@ const Cart = () => {
       {!activecart ? (
         <FaShoppingCart
           onClick={() => setActivecart(!activecart)}
-          className={`text-3xl bg-white w-[50px] h-[50px] p-3 rounded-full cursor-pointer transition-all duration-500 m-2 shadow-md fixed bottom-2 right-2 ${totalQty > 0 && "animate-bounce transition-all delay-500 "}`}
+          className={`text-3xl bg-orange-500 hover:bg-orange-600 w-[50px] h-[50px] p-3 rounded-full cursor-pointer transition-all duration-500 m-2 shadow-md fixed bottom-2 lg:right-2 right-0 ${totalQty > 0 && "animate-bounce transition-all delay-500 "}`}
         />
       ) : null}
     </>
