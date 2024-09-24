@@ -9,6 +9,7 @@ const FoodItem = () => {
         return (
         <FoodCard 
          key={food.id}
+         id={food.id}
          name={food.name} 
          desc={food.desc.slice(0,48).concat("....")} 
          category={food.category} 

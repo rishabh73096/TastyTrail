@@ -21,6 +21,7 @@ const FoodCard = ({ img, desc, name, rating, id, price }) => {
         <p className="text-gray-500 mb-4">
           {desc}
         </p>
+        {/* <p>{id}</p> */}
         <div className="flex justify-between items-center">
           <div className="flex items-center text-yellow-500">
             <FaStar className="mr-1" />
