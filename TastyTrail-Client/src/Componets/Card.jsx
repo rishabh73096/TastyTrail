@@ -6,6 +6,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import toast, { Toaster}  from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+
 const Cart = () => {
   const [activecart, setActivecart] = useState(false);
   const CardItems = useSelector((state) => state.Cart.Cart);
@@ -14,6 +15,7 @@ const Cart = () => {
     (totalPrice, item) =>totalPrice=totalPrice + item.qty * item.price,
     0
   );
+  const handleCartToast = () => toast.success(`Empty cart`);
   const handletost = (name) =>{
     toast.success(`${name} deleted.`, {
       style: {
@@ -69,7 +71,15 @@ const Cart = () => {
             <h2 className="text-lg font-semibold">Total: {totalPrice}</h2>
           </div>
          <div className="border-t ">
-          <button className="w-full bg-orange-500 text-white font-bold py-3 rounded-lg shadow-md hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 mt-3" onClick={()=> navigate("/sucess")}>
+          <button className="w-full bg-orange-500 text-white font-bold py-3 rounded-lg shadow-md hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 mt-3" onClick={()=>{
+                 navigate("/sucess")
+                setTimeout(() => {
+              handleCartToast();
+             },500);
+            
+        
+           
+            }}>
             Checkout
           </button>
          </div>

@@ -8,24 +8,21 @@ const Sucess = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Set a 3-second timer to switch from loader to success message
     const timer = setTimeout(() => {
       setLoading(false);
     }, 3000);
-
-    // Clean up the timer when the component unmounts
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
       <NavBar />
-      <div className="flex flex-col items-center justify-center w-full lg:h-[37vw] h-screen bg-gray-100">
+      <div className="flex flex-col items-center justify-center w-full lg:h-[37vw] h-screen-[80%] bg-gray-100 ">
         {loading ? (
           <PropagateLoader color="#ffab00" />
         ) : (
           <>
-            <h2 className="text-2xl font-semibold text-gray-800 mt-4 transition-opacity duration-500 ease-in">
+            <h2 className="text-2xl font-semibold text-gray-800 transition-opacity duration-500 ease-in">
               Your Order Successfully Placed
             </h2>
             <Link to="/" className="mt-6">
