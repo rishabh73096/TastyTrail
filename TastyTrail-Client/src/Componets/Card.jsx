@@ -73,11 +73,7 @@ const Cart = () => {
          <div className="border-t ">
           <button className="w-full bg-orange-500 text-white font-bold py-3 rounded-lg shadow-md hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 mt-3" onClick={()=>{
                  navigate("/sucess")
-                setTimeout(() => {
-              handleCartToast();
-             },500);
-            
-        
+                 handleCartToast();
            
             }}>
             Checkout
