@@ -17,12 +17,13 @@ const Sucess = () => {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col items-center justify-center w-full lg:h-[37vw] h-screen-[80%] bg-gray-100 ">
+      <div className="flex flex-col items-center justify-center w-full h-[150vw] bg-gray-100 lg:h-[37vw] sm:h-[50vw]">
+
         {loading ? (
           <PropagateLoader color="#ffab00" />
         ) : (
           <>
-            <h2 className="text-2xl font-semibold text-gray-800 transition-opacity duration-500 ease-in">
+            <h2 className="text-2xl font-semibold text-gray-800 transition-opacity duration-500 ease-in text-center ">
               Your Order Successfully Placed
             </h2>
             <Link to="/" className="mt-6">

@@ -21,17 +21,26 @@ const CartSlice = createSlice({
     removeToCart: (state, action) => {
       state.Cart = state.Cart.filter((item) => item.id !== action.payload.id);
     },
-    increment :(state,action) =>{
-        state.Cart=state.Cart.map((item)=> item.id ===action.payload.id ? {...item, qty: item.qty+1 }:item)
+    increment: (state, action) => {
+      state.Cart = state.Cart.map((item) => 
+        item.id === action.payload.id ? { ...item, qty: item.qty + 1 } : item
+      );
     },
-    decrement :(state,action)=>{
-        state.Cart = state.Cart.map((item)=> item.id === action.payload.id ? {...item,qty:item.qty-1}:item)
+    decrement: (state, action) => {
+      state.Cart = state.Cart.map((item) => 
+        item.id === action.payload.id ? { ...item, qty: item.qty - 1 } : item
+      );
     },
-    totalPrice :(state,action)=>{
-        state.Cart = state.Cart.map((item)=> item.id === action.payload.id ? {...item,price:item.qty*item.price}:item)
+    totalPrice: (state, action) => {
+      state.Cart = state.Cart.map((item) => 
+        item.id === action.payload.id ? { ...item, price: item.qty * item.price } : item
+      );
+    },
+    clearCart: (state) => {
+      state.Cart = []; 
     }
   },
 });
 
-export const { addToCart, removeToCart ,increment, decrement ,totalPrice} = CartSlice.actions;
+export const { addToCart, removeToCart, increment, decrement, totalPrice, clearCart } = CartSlice.actions;
 export default CartSlice.reducer;

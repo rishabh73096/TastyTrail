@@ -15,7 +15,7 @@ const Cart = () => {
     (totalPrice, item) =>totalPrice=totalPrice + item.qty * item.price,
     0
   );
-  const handleCartToast = () => toast.success(`Empty cart`);
+ // const handleCartToast = () => toast.success(`Empty cart`);
   const handletost = (name) =>{
     toast.success(`${name} deleted.`, {
       style: {
@@ -30,6 +30,7 @@ const Cart = () => {
     });
   };
  const navigate= useNavigate();
+
   return (
     <><Toaster position="top-center" reverseOrder={false} />
       <div
@@ -72,9 +73,11 @@ const Cart = () => {
           </div>
          <div className="border-t ">
           <button className="w-full bg-orange-500 text-white font-bold py-3 rounded-lg shadow-md hover:bg-orange-600 active:bg-orange-700 transition-colors duration-300 mt-3" onClick={()=>{
-                 navigate("/sucess")
-                 handleCartToast();
-           
+                  navigate("/sucess")
+                 // dispatch(clearCart())
+                
+                //  handleCartToast();
+            
             }}>
             Checkout
           </button>
